@@ -245,24 +245,39 @@ li{
     height: 150px;
 }
 
-.hanlah h3{
-    margin: 15px;
-    color: #876348;
+#section-file {
+    font-family: Arial, sans-serif;
+    background-color: linear-gradient(rgba(54, 33, 18, 0.7),rgba(0, 0, 0, 0.7));
+    margin: 0;
+    padding: 20px;
 }
 
-.hanlah p{
-    margin: 15px;
-    height: 120px;
+.container {
+    max-width: 600px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+    background: rgba(54, 33, 18, 0.7);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.hanler h3{
-    margin: 15px;
-    color: #876348;
+h2 {
+    text-align: center;
 }
 
-.hanler p{
-    margin: 15px;
-    height: 79px;
+.folder-creation,
+.folder-selection,
+.file-upload {
+    margin-bottom: 20px;
+}
+
+.loading {
+    display: none; /* Initially hidden */
+    color: #100802;
+}
+
+.file-display {
+    margin-top: 20px;
 }
 
 /* SECTION 3 (CONTACT)*/
