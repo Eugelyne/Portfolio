@@ -84,29 +84,30 @@
     <section class='file' id='section-file'>
         <div class='file-statement' >
             <h2>FILES</h2>
-            <img src='Assets/ALPH.png' alt='ARTLIPH.'>
-            <p>
-            Expands the self's imagination,<br> thoughts, and creativity. <br> 
-            </p>
+            <div class="folder-creation">
+                <input type="text" id="folderName" placeholder="New Folder Name">
+                <button id="createFolder">Create Folder</button>
+            </div>
+            
+            <div class="folder-selection">
+                <select id="folderSelect">
+                    <option value="">Select a folder</option>
+                </select>
+            </div>
+    
+            <div class="file-upload">
+                <input type="file" id="fileInput" multiple>
+                <button id="uploadFile">Upload File</button>
+            </div>
+    
+            <div id="loadingIndicator" class="loading">Uploading...</div>
+    
+            <div class="file-display">
+                <h2>Uploaded Files:</h2>
+                <ul id="fileList"></ul>
+            </div>
         </div>
-        <div class='hanlah'>
-            <h3>Vision</h3>
-            <p>
-                To inspire, provoke thought, and deepen our understanding of the human experience.<br>
-                Through creativity, expression, and critical inquiry, <br>
-                we aim to explore the complexities of existence,<br>
-                challenge societal norms, and illuminate truths <br>
-                about the world and ourselves. <br>
-            </p>
-        </div>
-        <div class='hanler'>
-            <h3>Mission</h3>
-            <p>
-            To cultivate creativity, critical thinking, and cultural understanding. <br>
-            Our mission is to spark curiosity, provoke reflection, and contribute <br>
-            to the ongoing evolution of human thought and expression.<br>
-            </p>
-        </div>
+        <script src="script.js"></script>
     </section>
 
 
