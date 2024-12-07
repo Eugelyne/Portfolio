@@ -12,20 +12,27 @@
     <!----------- NAVIGATION ----------->
     <nav class='navigation-bar'>
         <ul class='nav-list'>
-            <img class='logo' src='Assets/ALPH.png'  alt='ALPH'>
+            <img class='logo' src='Assets/ALPH.png' alt='ALPH'>
             <li><a href='#section-home'>HOME</a></li>
             <li><a href='#section-about'>ABOUT</a></li>
             <li><a href='#section-file'>FILE</a></li>
             <li><a href='#section-contact'>CONTACT</a></li>
-            <img class='Profile-admin' src='Assets/Profile_admin.png' alt="Profile-admin">
+            
+            <div class="profile-container">
+                <img class='Profile-admin' src='Assets/Profile_admin.png' alt="Profile-admin" onclick="toggleDropdown()">
+                <div id="profileDropdown" class="dropdown-content" style="display: none;">
+                    <a href="#" onclick="logout()">Log Out</a>
+                </div>
+            </div>
         </ul>
     </nav>
+    
     <br><br> 
     <!----------- MAIN ----------->
     <main>
-    <!----------- HEADER ----------->
     <br>
-
+    
+    <!----------- HOME PAGE ----------->
     <header class='main-header' id='section-home'>
         <section>
             <h1 class='typewriter'>EUGELYNE MAE S. BAUZON</h1>
@@ -82,29 +89,37 @@
 
     <!----------- SECTION 3 (FILES) ----------->
     <section class='file' id='section-file'>
-        <div class='file-statement' >
-            <h2>FILES</h2>
-            <div class="folder-creation">
-                <input type="text" id="folderName" placeholder="New Folder Name">
-                <button id="createFolder">Create Folder</button>
-            </div>
-            
-            <div class="folder-selection">
-                <select id="folderSelect">
-                    <option value="">Select a folder</option>
-                </select>
-            </div>
-    
-            <div class="file-upload">
-                <input type="file" id="fileInput" multiple>
-                <button id="uploadFile">Upload File</button>
-            </div>
-    
-            <div id="loadingIndicator" class="loading">Uploading...</div>
-    
-            <div class="file-display">
-                <h2>Uploaded Files:</h2>
-                <ul id="fileList"></ul>
+        <div id="section-file">
+            <div class="container">
+                <h2>File Management System</h2>
+        
+                <!-- New Folder Creation -->
+                <div class="folder-creation">
+                    <h3>Create New Folder</h3>
+                    <input type="text" id="folderName" placeholder="Folder Name">
+                    <button onclick="createFolder()">Create Folder</button>
+                </div>
+        
+                <!-- Folder Selection -->
+                <div class="folder-selection">
+                    <h3>Select Folder</h3>
+                    <select id="folderSelect" onchange="displayFiles()">
+                        <option value="">Select a folder</option>
+                    </select>
+                </div>
+        
+                <!-- File Upload Form -->
+                <div class="file-upload">
+                    <h3>Upload File</h3>
+                    <input type="file" id="fileInput">
+                    <button onclick="uploadFile()">Upload</button>
+                </div>
+        
+                <!-- Loading Indicator -->
+                <div class="loading" id="loadingIndicator">Loading...</div>
+        
+                <!-- File Display -->
+                <div class="file-display" id="fileList"></div>
             </div>
         </div>
         <script src="script.js"></script>
@@ -117,7 +132,8 @@
         <form>
             <fieldset class='contact-form'> 
                 <legend><strong>GET IN TOUCH</strong></legend>
-                <label for='name'>Your Name:  </label><input type='text' id='name' placeholder='First Name' required> <input type="text" placeholder='Last Name' name='last-name' required> <br><br>
+                <label for='name'>Your Name:  </label><input type='text' id='name' placeholder='First Name' required> 
+                <input type="text" placeholder='Last Name' name='last-name' required> <br><br>
                 <label for='email'>Email Address:  </label><input type='email' id='email' placeholder='' required> <br> <br>
                 <label for='number'>Phone Number:  </label><input type='tel' id='number' placeholder='' required> <br><br>
                 <label for="messages">Send us a message. We would like to hear from you.</label><br>
@@ -130,6 +146,7 @@
     <br><br>
     </main>
 
+        <!----------- (FOOTER) ----------->
     <footer class='main-footer'>
         <div class='list-footer'>
             <a href='https://www.linkedin.com/in/eugelyne-mae-bauzon-6b05282b0/'><img src='Assets/linkedin.png' alt='Linked-In Account'> </a>
